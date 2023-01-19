@@ -17,7 +17,6 @@ const colors = {
     'blue': [0, 0, 255],
     'teal': [0, 128, 128],
     'aqua / cyan': [0, 255, 255],
-
     'orange': [255, 165, 0],
     'aliceblue': [240, 248, 255],
     'antiquewhite': [250, 235, 215],
@@ -237,12 +236,17 @@ function renderPreview(color) {
     let [r, g, b] = colors[color];
 
     document.getElementById('preview').innerHTML = `
-    ${color}
-        <span class="swatch"
-        style="background-color: ${rgbToHex(r, g, b)};">&nbsp;</span>
-    ${rgbToHex(r, g, b).toUpperCase()}
+    <div class="name_container">
+        <div class="name_container2">
+            <div class="color" style="background-color: ${rgbToHex(r, g, b)};">&nbsp;</div>
+            <span class="name">${color}</span>
+        </div>
+    </div>
+    
     `;
 }
+
+//${rgbToHex(r, g, b).toUpperCase()}
 
 svg.addEventListener('mouseover', e => {
     let el = e.target;
